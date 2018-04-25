@@ -120,6 +120,16 @@
     messagingSenderId: "614051441455"
   };
   firebase.initializeApp(config);
+  
+  const messaging = firebase.messaging();
+  messaging.requestPermission()
+  .then(function(){
+    console.log('Have permission');
+  })
+  .catch(function(err) {
+    console.log('Error Occured.');
+  }
+    )
 </script>
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
 <!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
